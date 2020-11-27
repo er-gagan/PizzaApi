@@ -6,7 +6,6 @@ from rest_framework.views import APIView
 from rest_framework.reverse import reverse
 
 # Create your views here.
-
 class pizzas(APIView):
     def get(self, request, format = None):
         reg = Pizza.objects.all()
