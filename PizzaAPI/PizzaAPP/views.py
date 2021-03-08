@@ -4,7 +4,6 @@ from rest_framework.response import Response
 from .serializers import Pizza_Serializers
 from rest_framework.views import APIView
 from rest_framework.reverse import reverse
-
 # Create your views here.
 class pizzas(APIView):
     def get(self, request, format = None):
@@ -47,31 +46,31 @@ class pizza_Detail(APIView):
 
 class Regular(APIView):
     def get(self, request, format = None):
-        regular = Pizza.objects.filter(Category__iexact="Regular").all()
+        regular = Pizza.objects.filter(Category__iexact="Regular")
         serializer = Pizza_Serializers(regular, many=True)
         return Response(serializer.data)
     
 class Square(APIView):
     def get(self, request, format = None):
-        square = Pizza.objects.filter(Category__iexact="Square").all()
+        square = Pizza.objects.filter(Category__iexact="Square")
         serializer = Pizza_Serializers(square, many=True)
         return Response(serializer.data)
     
 class Small_Size(APIView):
     def get(self, request, format = None):
-        small = Pizza.objects.filter(Size__iexact="Small").all()
+        small = Pizza.objects.filter(Size__iexact="Small")
         serializer = Pizza_Serializers(small, many=True)
         return Response(serializer.data)
     
 class Medium_Size(APIView):
     def get(self, request, format = None):
-        medium = Pizza.objects.filter(Size__iexact="Medium").all()
+        medium = Pizza.objects.filter(Size__iexact="Medium")
         serializer = Pizza_Serializers(medium, many=True)
         return Response(serializer.data)
 
 class Large_Size(APIView):
     def get(self, request, format = None):
-        large = Pizza.objects.filter(Size__iexact="Large").all()
+        large = Pizza.objects.filter(Size__iexact="Large")
         serializer = Pizza_Serializers(large, many=True)
         return Response(serializer.data)
 
